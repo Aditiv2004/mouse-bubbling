@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        .parent{
+            border: 2px solid purple;
+            height: 300px;
+            width: 500px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 192, 203, 0.733);
+
+        }
+        .child{
+            height: 150px;
+            width: 300px;
+            border: 2px solid orchid;
+         margin: 40px;
+            justify-items: center;
+            align-content: center;
+            background-color: rgba(128, 255, 0, 0.479);
+            border-radius:10px 10px 5px;
+
+        }
+        button{
+            justify-content: center;
+            align-content: center;
+            margin-left: 150px;
+            height:40px ;
+            width: 100px;
+            border-radius: 5px 4px 5px;
+            background-color: purple;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Event Bubbling</h1>
+
+    <p> Event Bubbling is a machanism in js where an event triggered on an inner element will automatically propagate(move)to its parent element->step by step-> until it reaches the top-most element.
+    </p>
+
+    <div class="parent">
+        <h1>Hi! Parent ☺️</h1>
+        <div class=child><h2>hello child</h2>
+            <button class="button">click me</button>
+          
+        </child-box>
+    </div>
+ 
+
+
+
+    <script>
+ let parent=document.querySelector(".parent");
+ let child=document.querySelector(".child");
+ let button=document.querySelector(".button");
+ parent.addEventListener("click" ,(e)=>{
+    e.stopPropagation();
+    alert('parent');
+ });
+  child.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    alert('child');
+
+  });
+  button.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    alert('button');
+  
+  });                
+ 
+
+ </script>
+
+
+</body>
+</html>
