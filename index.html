@@ -73,7 +73,15 @@
     e.stopPropagation();
     alert('button');
   
-  });                
+  });    
+
+ let follower=document.querySelector(".follower");
+  document.addEventListener("mousemove", (e) => {
+   
+     let { clientX ,clientY } = e;
+     follower.style.transform = `translate(${clientX}px, ${clientY}px)`;
+    // follower.style.transform`tranlate(${clientX}px, ${clientY}px)`;
+  })
  
 
  </script>
